@@ -1,15 +1,52 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14313.18" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.10"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller spacing="14" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="RunningMan_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="center" text="Run time" textAlignment="center" id="to3-WN-ozP">
+                            <fontDescription key="font" type="boldSystem" pointSize="20"/>
+                        </label>
+                        <slider width="1" alignment="center" value="5" maximum="60" steps="12" id="vKV-p4-Zj4"/>
+                        <button width="1" alignment="left" title="Start 5 min run" id="a6p-ZT-k04">
+                            <connections>
+                                <segue destination="UUF-Q7-BZh" kind="push" identifier="timerSeque" id="5ST-xw-olq"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
             </objects>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="y4w-Gm-dOE">
+            <objects>
+                <controller spacing="30" id="UUF-Q7-BZh">
+                    <items>
+                        <timer alignment="center" id="Rmc-Lh-9CN">
+                            <fontDescription key="font" type="system" pointSize="30"/>
+                        </timer>
+                        <label alignment="center" text="Calories: 0" id="9r6-Wo-i0G"/>
+                        <group alignment="center" spacing="6" id="FQJ-OO-0b3">
+                            <items>
+                                <button alignment="left" backgroundImage="play" id="Ifw-HL-lF6"/>
+                                <button alignment="left" backgroundImage="pause" id="XUN-cv-zuL"/>
+                                <button alignment="left" backgroundImage="cancel" id="bDs-5H-uMt"/>
+                            </items>
+                        </group>
+                    </items>
+                    <variation key="device=watch38mm" spacing="24"/>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="339" y="31"/>
         </scene>
     </scenes>
 </document>
