@@ -16,20 +16,28 @@
                         <label alignment="center" text="Run time" textAlignment="center" id="to3-WN-ozP">
                             <fontDescription key="font" type="boldSystem" pointSize="20"/>
                         </label>
-                        <slider width="1" alignment="center" value="5" maximum="60" steps="12" id="vKV-p4-Zj4"/>
+                        <slider width="1" alignment="center" value="5" maximum="60" steps="12" id="vKV-p4-Zj4">
+                            <connections>
+                                <action selector="runTimeChanged:" destination="AgC-eL-Hgc" id="3MO-NB-e5c"/>
+                            </connections>
+                        </slider>
                         <button width="1" alignment="left" title="Start 5 min run" id="a6p-ZT-k04">
                             <connections>
-                                <segue destination="UUF-Q7-BZh" kind="push" identifier="timerSeque" id="5ST-xw-olq"/>
+                                <segue destination="UUF-Q7-BZh" kind="push" identifier="timerSegue" id="5ST-xw-olq"/>
                             </connections>
                         </button>
                     </items>
+                    <connections>
+                        <outlet property="slider" destination="vKV-p4-Zj4" id="ELf-dI-Mkq"/>
+                        <outlet property="startButton" destination="a6p-ZT-k04" id="8Zl-my-FMI"/>
+                    </connections>
                 </controller>
             </objects>
         </scene>
-        <!--Interface Controller-->
+        <!--Timer Interface Controller-->
         <scene sceneID="y4w-Gm-dOE">
             <objects>
-                <controller spacing="30" id="UUF-Q7-BZh">
+                <controller spacing="30" id="UUF-Q7-BZh" customClass="TimerInterfaceController" customModule="RunningMan_WatchKit_Extension">
                     <items>
                         <timer alignment="center" id="Rmc-Lh-9CN">
                             <fontDescription key="font" type="system" pointSize="30"/>
@@ -37,13 +45,32 @@
                         <label alignment="center" text="Calories: 0" id="9r6-Wo-i0G"/>
                         <group alignment="center" spacing="6" id="FQJ-OO-0b3">
                             <items>
-                                <button alignment="left" backgroundImage="play" id="Ifw-HL-lF6"/>
-                                <button alignment="left" backgroundImage="pause" id="XUN-cv-zuL"/>
-                                <button alignment="left" backgroundImage="cancel" id="bDs-5H-uMt"/>
+                                <button alignment="left" backgroundImage="play" id="Ifw-HL-lF6">
+                                    <connections>
+                                        <action selector="resumeButtonTapped" destination="UUF-Q7-BZh" id="kWd-eV-WDD"/>
+                                    </connections>
+                                </button>
+                                <button alignment="left" backgroundImage="pause" id="XUN-cv-zuL">
+                                    <connections>
+                                        <action selector="pauseButtonTapped" destination="UUF-Q7-BZh" id="tPl-rV-IWo"/>
+                                    </connections>
+                                </button>
+                                <button alignment="left" backgroundImage="cancel" id="bDs-5H-uMt">
+                                    <connections>
+                                        <action selector="cancelButtonTapped" destination="UUF-Q7-BZh" id="jys-4I-SEy"/>
+                                    </connections>
+                                </button>
                             </items>
                         </group>
                     </items>
                     <variation key="device=watch38mm" spacing="24"/>
+                    <connections>
+                        <outlet property="caloriesLabel" destination="9r6-Wo-i0G" id="061-3y-nrt"/>
+                        <outlet property="cancelButton" destination="bDs-5H-uMt" id="0l1-AI-unY"/>
+                        <outlet property="pauseButton" destination="XUN-cv-zuL" id="bbd-bl-yZy"/>
+                        <outlet property="resumeButton" destination="Ifw-HL-lF6" id="LaG-me-TIt"/>
+                        <outlet property="timerLabel" destination="Rmc-Lh-9CN" id="aVR-fe-5XZ"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="339" y="31"/>

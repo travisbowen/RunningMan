@@ -12,20 +12,34 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
+    
+    @IBOutlet private weak var startButton: WKInterfaceButton!
+    @IBOutlet private weak var slider: WKInterfaceSlider!
+    private var runTime = 5
+    
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        // Configure interface objects here.
     }
     
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
+    
+    @IBAction func runTimeChanged(_ value: Float) {
+        runTime = Int(value)
+        startButton.setTitle("Start \(runTime) min run")
     }
+    
+    
+    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
+        if (segueIdentifier == "timerSegue"){
+            return runTime
+        }
+        return nil
+    }
+    
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
 }

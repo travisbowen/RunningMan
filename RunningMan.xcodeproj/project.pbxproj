@@ -19,6 +19,7 @@
 		1FA5C17F2154715600ADBDF6 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA5C17E2154715600ADBDF6 /* InterfaceController.swift */; };
 		1FA5C1812154715600ADBDF6 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA5C1802154715600ADBDF6 /* ExtensionDelegate.swift */; };
 		1FA5C1832154715700ADBDF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FA5C1822154715700ADBDF6 /* Assets.xcassets */; };
+		1FA5C19321557B1400ADBDF6 /* TimerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA5C19221557B1400ADBDF6 /* TimerInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		1FA5C1802154715600ADBDF6 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		1FA5C1822154715700ADBDF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FA5C1842154715700ADBDF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FA5C19221557B1400ADBDF6 /* TimerInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				1FA5C17E2154715600ADBDF6 /* InterfaceController.swift */,
+				1FA5C19221557B1400ADBDF6 /* TimerInterfaceController.swift */,
 				1FA5C1802154715600ADBDF6 /* ExtensionDelegate.swift */,
 				1FA5C1822154715700ADBDF6 /* Assets.xcassets */,
 				1FA5C1842154715700ADBDF6 /* Info.plist */,
@@ -297,6 +300,7 @@
 			files = (
 				1FA5C1812154715600ADBDF6 /* ExtensionDelegate.swift in Sources */,
 				1FA5C17F2154715600ADBDF6 /* InterfaceController.swift in Sources */,
+				1FA5C19321557B1400ADBDF6 /* TimerInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
